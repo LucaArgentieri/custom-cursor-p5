@@ -1,6 +1,4 @@
 # CustomCursor
-
-## What is?
 CustomCursor is an out-of-the-box plugin to add a cool and smooth cursor to your web page. 
 
 It is made in Typescript and generates a canvas made in p5.js.
