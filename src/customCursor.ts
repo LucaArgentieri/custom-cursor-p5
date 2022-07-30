@@ -12,6 +12,7 @@ interface options {
     stroke?: Boolean;
     strokeColor?: String;
     strokeWeight?: Number;
+    strokeClickedColor?: String
     shape?: String;
     ease?: Boolean;
     easeValue?: Number;
@@ -81,6 +82,7 @@ class customCursorCanvas {
             if (this.options?.colorAtClick) {
                 if (p.mouseIsPressed) {
                     p.fill(this.options.clickedColor || "#ED225D");
+                    p.stroke(this.options.strokeClickedColor || "#000000")
                 }
             }
 
@@ -92,14 +94,6 @@ class customCursorCanvas {
             this.easingVariables.dy = p.mouseY - this.easingVariables.y;
             this.easingVariables.y += this.easingVariables.dy * this.easingVariables.easing;
 
-
-            //Shape
-            // p.triangle(
-            //     this.options?.ease ? this.easingVariables.x : p.mouseX,
-            //     this.options?.ease ? this.easingVariables.y : p.mouseY,
-            //     this.options?.size?.width,
-            //     this.options?.size?.height
-            // );
 
             this.createShape(p, this.options?.shape)
 
@@ -117,7 +111,7 @@ class customCursorCanvas {
 
     }
 
-    createShape(p, shape) {
+    createShape(p: any, shape: any) {
         switch (shape) {
             case 'ellipse':
                 this.createEllipse(p)
@@ -136,7 +130,7 @@ class customCursorCanvas {
 
     }
 
-    createEllipse(p) {
+    createEllipse(p: any) {
         p.ellipse(
             this.options?.ease ? this.easingVariables.x : p.mouseX,
             this.options?.ease ? this.easingVariables.y : p.mouseY,
@@ -145,7 +139,7 @@ class customCursorCanvas {
         );
     }
 
-    createRect(p) {
+    createRect(p: any) {
         p.rect(
             this.options?.ease ? this.easingVariables.x : p.mouseX,
             this.options?.ease ? this.easingVariables.y : p.mouseY,
@@ -154,7 +148,7 @@ class customCursorCanvas {
         );
     }
 
-    createPoint(p) {
+    createPoint(p: any) {
         p.point(
             this.options?.ease ? this.easingVariables.x : p.mouseX,
             this.options?.ease ? this.easingVariables.y : p.mouseY,

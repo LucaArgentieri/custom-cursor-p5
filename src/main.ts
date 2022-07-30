@@ -10,17 +10,19 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 `
 
 customCursor({
-  fill: false,
-  fillColor: "yellow",
-  cursor: true,
+  shape: 'ellipse',
+  cursor: false,
   size: {
     width: 15,
     height: 15
   },
-  ease: false,
+  ease: true,
   easeValue: 0.06,
   background: false,
-  colorAtClick: false,
+  colorAtClick: true,
+  clickedColor: 'white',
+  strokeColor: 'white',
+  strokeClickedColor: 'black',
   stroke: true,
-  strokeWeight: 10
+  strokeWeight: 1
 })
