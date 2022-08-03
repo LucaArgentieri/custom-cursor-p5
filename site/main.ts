@@ -1,5 +1,5 @@
-import { customCursor } from './customCursor'
 import './style.css'
+import { customCursor } from 'custom-cursor-p5'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <span custom-cursor-area style="pointer-events: none; position:fixed; left:0; top:0; width: 100vw; height:100vh; z-index: 9999;"></span>
